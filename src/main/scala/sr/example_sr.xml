@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ShiftRegister name="ExampleSR">
+	<Register name="VPADC" size="6">
+		<Attributes for="sr">
+			<Attribute name="dac">6</Attribute>
+			
+		</Attributes>
+	</Register>
+	<Register name="VPAMP" size="6">
+		<Attributes for="sr">
+			<Attribute name="dac">6</Attribute>
+			
+		</Attributes>
+
+	</Register>
+</ShiftRegister>

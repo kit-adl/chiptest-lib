@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Measurement>
+    <Name>Sr90 Messung für Signalhöhenkalibration</Name>
+    <Sample>Testchip Nummer #1 auf 80 Ohmcm Substrat</Sample>
+    <MeasurementDevice>Osci</MeasurementDevice>
+    <Description>
+    	Testbeschreibung in vielen Worten
+    </Description>
+    <Trigger>
+        <TriggerA>TestTriggerA</TriggerA>
+        <TriggerB>TestTriggerB</TriggerB>
+    </Trigger>
+    <Configuration>
+        <HV Value="10" int="0"/>
+        <!-- hier können alle Parameter eingefügt werden. Der Name des Parameters ist 
+             der Name des Knotens und der XML-Parameter "int" gibt an, ob als int (für int=1)
+             oder als double (int=0) eingelesen werden soll -->
+    </Configuration>
+    <Event Name="test1" valid="1" nr="1" CaptureTime="01.02.17 13:55">
+		<!-- die Eventnummer ist nur zum Mitzählen in der Datei gedacht. sie wird beim Schreiben der Datei hinzugefügt. Events können auch einen Zeitstempel enthalten der als String gehandhabt wird -->
+        <WaveForm Name="Chip" BytesPerPoint="2" Timestep="1.0000000000000001e-09" Scale="0.001" YOffset="0" Bandwidth="10 MHz&amp;&quot;" valid="1" PointData="0">39343535</WaveForm>
+        <!-- die Binärdaten vom Oszi werden als HEX-Zahlen gespeichert. D.h. 1 Datenbyte wird auf 2 Byte in der Datei abgebildet. Groß- und Kleinschreibung der Buchstaben ist erlaubt (auch gemischt) -->
+        <WaveForm Name="PointTest" BytesPerPoint="0" Timestep="-10000000000" Scale="-10000000000" YOffset="-10000000000" Bandwidth="" valid="1" PointData="1">
+            <Point x="12.4" y="22.300000000000001"/>
+            <Point x="10.300000000000001" y="19.699999999999999"/>
+        </WaveForm>
+        <!-- der Parameter "PointData" gibt an, ob die Daten komprimiert oder als einzelne Punkte vorliegen. Grund ist Faulheit beim Programmieren des Einlesens. -->
+        <Histogram Name="Height" Typ="vertical" FirstBinMean="1.04" BinWidth="0.029999999999999999" valid="1">13,0,3,2,5,1,754,22</Histogram>
+        <!-- Histogramme sind genauso wie vom Osci geliefert als Komma-getrennte Bininhalte abgespeichert. Nur die Parameter sind anders um die Bingrenzen festzulegen -->
+        <Textdata Name="TextBlubb" valid="1">irgendwelche Daten
+auch mit Zeilenumbrüchen &amp; komischen Zeichen, "die in XML eigentlich nicht zulässig sind"</Textdata>
+    </Event>
+</Measurement>
